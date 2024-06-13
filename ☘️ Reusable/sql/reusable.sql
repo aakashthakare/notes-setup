@@ -1,0 +1,1 @@
+select reusable from script;

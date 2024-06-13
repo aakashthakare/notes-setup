@@ -1,0 +1,43 @@
+
+//            StatusRecord statusRecord = StatusRecord.builder()
+//                .statusType(StatusType.APPLICATION)
+//                .applicationId(applicationId)
+//                .status(ApplicationState.DO.getValue())
+//                .applicationStage(ApplicationStage.DO_ISSUED)
+//                .createTimestamp(LocalDateTime.now())
+//                .build();
+//            statusKafkaProducerService.publishStatusRecord(statusRecord);
+//            log.debug("Sending push notification for : {} ", applicationId);
+//            sendPushNotificationForUnderwriterApproval(applicationId, underwriterApprovalRequest.getData());
+
+
+
+
+
+//    private void sendPushNotificationForUnderwriterApproval(String applicationId, UnderwriterCallbackData data)
+//        throws JsonProcessingException {
+//        Map<String, String> metaData = new HashMap<>();
+//        metaData.put("Application ID", data.getRequest().getApplicationId());
+//        PushNotificationLoanApplicationDetails pushNotificationLoanApplicationDetails =
+//            loanClient.fetchActiveLoanDetails(applicationId).getData();
+//
+//        MfResponse<CustomerDetailsResponse> customerDetailsResponse =
+//            customerClient.fetchCustomerBasicDetails(pushNotificationLoanApplicationDetails.getCustomerId());
+//        String customerName = getCustomerName(customerDetailsResponse.getData());
+//        String message = MessageTemplate.processMessage(
+//            Language.ENGLISH, MessageType.PUSH_NOTIFICATION, DO_ISSUED_MESSAGE, customerName, applicationId);
+//        String title = MessageTemplate.processMessage(Language.ENGLISH, MessageType.PUSH_NOTIFICATION, DO_ISSUED_TITLE);
+//
+//        pushNotificationClient.sendPushNotification(
+//            message, metaData, pushNotificationLoanApplicationDetails.getUserId(), title);
+//
+//        PushNotificationRequest pushNotificationRequest = buildPushNotificationData(
+//            applicationId,
+//            DO_ISSUED,
+//            pushNotificationLoanApplicationDetails.getUserId(),
+//            customerName,
+//            CallBackType.DO_ISSUED);
+//        if (log.isDebugEnabled())
+//            log.debug("Going to save notification {} for application {} ", DO_ISSUED, applicationId);
+//        savePushNotificationData(pushNotificationRequest);
+//    }
